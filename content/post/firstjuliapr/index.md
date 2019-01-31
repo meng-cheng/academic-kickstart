@@ -34,6 +34,7 @@ In this post I'm going to go through my step-by-step process of finding some cod
 
 # Prereqs
 To get started, we're going to need a few things:
+
   - Some basic `git` knowledge: `git add`, `git clone`, `git commit`, `git checkout`, and `git push`. If you need an introduction to `git`, some decent options are:
     - [The GitHub help pages](https://help.github.com/articles/git-and-github-learning-resources/)
     - [The official git docs](https://git-scm.com/docs)
@@ -214,10 +215,12 @@ You can run any test in `test/` this way, for example `make test-arrayops` works
 # Commiting and pushing
 
 We need to commit our changes and push them to a remote so that we can open a pull request, which will let someone review the proposed changes and (hopefully) merge them. Although it's possible to do this from your `master` branch, this can very quickly lead to tears. It's better to:
+
   1. Make a new `git` branch
   2. Commit the changes there
   3. Push that branch to your fork
   4. Open a pull request from the branch on your fork
+
 We can use [`git checkout -b`](https://www.git-scm.com/docs/git-checkout) to both create a new branch and move over onto it, which will drag all our changes along with. `git checkout -b` is a shorter way of saying `git branch $BRANCH_NAME && git checkout $BRANCH_NAME`. You can choose whatever you like for the branch name, but I tend to prepend with my initials and then use a short description of what the changes were. As an example:
 ```bash
 git checkout -b ksh/sbtest
