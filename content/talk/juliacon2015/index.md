@@ -10,7 +10,7 @@ time_end = 2019-01-31T11:22:28-05:00
 all_day = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = [Katharine Hyatt]
+authors = ["Katharine Hyatt"]
 
 # Abstract and optional shortened version.
 abstract = "Using high-performance computing to probe quantum systems is becoming more and more common in condensed matter physics research. Many of the commonly used languages and techniques in this space are either difficult to learn or not performant. Julia has allowed us to quickly develop and test codes for a variety of commonly used algorithms, including exact diagonalization, DMRG, and quantum Monte Carlo. Its parallel features, including MPI and GPGPU integration, make it particularly attractive for many quantum simulations. I’ll discuss what features of Julia have been most useful for us when working on these simulations and the developments we’re most excited about."
