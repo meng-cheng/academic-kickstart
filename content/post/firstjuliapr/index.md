@@ -45,6 +45,7 @@ To get started, we're going to need a few things:
 # Zeroth Step: Setting Up Our Fork
 
 Having [forked](https://help.github.com/articles/fork-a-repo/) the [main julia repository](https://github.com/julialang/julia) to your GitHub account, you're ready to create a local [clone](https://git-scm.com/docs/git-clone) and let it know about both the upstream repos.
+
 I usually clone julia into a subdirectory of my home directory called `projects`, so that on a new machine what happens is:
 ```bash
 cd ~ # move to the home directory
@@ -262,7 +263,7 @@ That leads to the comparison screen, where I can see my proposed changes and wri
 
 GitHub has also helpfully used my commit message to title the pull request, and I think it's quite a nice title so I will leave it be. This PR is pretty self-explanatory so I won't write a description in the big text box provided, but it doesn't hurt to do this if you think it might not be obvious what your code does. Don't worry about requesting a reviewer or adding labels if this is your first PR - a maintainer can handle that for you. If everything looks ok, press the "Create pull request" button. At this point, you can wait for some reviews and maintainers can give you detailed help if your PR needs some changes. It's very common for a PR to need some tweaks -- it happens to me all the time! Although it can feel a little discouraging to have to keep making changes, maintainers are devoting the time to re-reviewing your PR because they think it's good and want it to be the best it can be (just like Julia as a whole). If you want to see the real-life PR that I created in making this post, it's right [here](https://github.com/JuliaLang/julia/pull/30921).
 
-Less than half a minute after I opened the pull request, super speedy reviewer Matt Baumann thought it was alright to merge it.
+Less than half a minute after I opened the pull request, super speedy reviewer Matt Bauman thought it was alright to merge it.
 
 ![Matt attack](review.png)
 
