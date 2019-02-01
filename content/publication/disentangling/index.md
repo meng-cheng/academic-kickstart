@@ -1,6 +1,6 @@
 +++
 title = "Extracting Entanglement Geometry from Quantum States"
-date = 2019-01-31T11:01:12-05:00
+date = 2017-01-31T11:01:12-05:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.

@@ -1,6 +1,6 @@
 +++
 title = "Entanglement at a Two-Dimensional Quantum Critical Point: a Numerical Linked Cluster Expansion Study"
-date = 2019-01-31T11:01:17-05:00
+date = 2012-01-31T11:01:17-05:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
