@@ -30,7 +30,7 @@ categories = []
   focal_point = ""
 +++
 
-In this post I'm going to go through my step-by-step process of finding some code in base Julia which is not covered by tests, adding tests which do cover it, checking to make sure the tests pass, and finally opening a pull request to have my changes merged in to Julia itself. We'll be working off commit `0b0a394b3e7741d38f00dbb29895b6ba6a7d0767` if you want to follow along. I do almost all my development on macOS and Linux, so some of the shell commands will be a little different if you're on Windows.
+In this post I'm going to go through my step-by-step process of finding some code in base Julia which is not covered by tests, adding tests which do cover it, checking to make sure the tests pass, and finally opening a pull request to have my changes merged in to Julia itself. We'll be working off commit `0b0a394b3e7741d38f00dbb29895b6ba6a7d0767` if you want to follow along. (To do so, you can `git checkout 0b0a394b3e7741d38f00dbb29895b6ba6a7d0767`. Keep in mind this will put you in the dreaded detached `HEAD` state.) I do almost all my development on macOS and Linux, so some of the shell commands will be a little different if you're on Windows.
 
 # Prereqs
 To get started, we're going to need a few things:
@@ -59,6 +59,13 @@ This will copy the repository from GitHub, including the current state of all th
 origin	git@github.com:JuliaLang/julia.git (fetch)
 origin	git@github.com:JuliaLang/julia.git (push)
 ```
+If you were using HTTPS, this would look like:
+```bash
+~/projects $ cd julia # move down into the julia directory post clone
+~/projects/julia $ git remote -v # list remotes and their URLs
+origin	https://github.com/JuliaLang/julia.git (fetch)
+origin	https://github.com/JuliaLang/julia.git (push)
+```
 So our repository knows about its "parent". But we probably don't have the ability to write directly to the main Julia repositiory (yet -- who knows what the future holds?), which means we won't be able to create our own branches there. Instead, we will need to use a repository copy we do have the ability to write to -- our fork -- to make our coming changes visible to the wide world. If we cloned from the JuliaLang repo, we need to add another remote for our fork. Usually this will have a URL like: `https://github.com/$USERNAME/julia.git` or `git@github.com:$USERNAME/julia.git` where `$USERNAME` is your GitHub username. To let `git` know about the second remote, we use [`git remote add`](https://git-scm.com/docs/git-remote):
 ```bash
 git remote add $REMOTE_NAME git@github.com:$USERNAME/julia.git
@@ -77,6 +84,15 @@ kshyatt	git@github.com:kshyatt/julia.git (fetch)
 kshyatt	git@github.com:kshyatt/julia.git (push)
 origin	git@github.com:JuliaLang/julia.git (fetch)
 origin	git@github.com:JuliaLang/julia.git (push)
+```
+And again, with HTTPS this would be:
+
+```bash
+~/projects/julia $ git remote -v # list remotes and their URLs
+kshyatt	https://github.com/kshyatt/julia.git (fetch)
+kshyatt	https://github.com/kshyatt/julia.git (push)
+origin	https://github.com/JuliaLang/julia.git (fetch)
+origin	https://github.com/JuliaLang/julia.git (push)
 ```
 
 With a fork and local knowledge of it, we're ready to find some changes to make.
